@@ -1,0 +1,87 @@
+===armstrong of 3 digit number================
+
+def armstrong(num):
+    sum=0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit*digit*digit
+        temp //= 10
+    if num == sum: 
+        print (num,"is an armstrong no")
+    else:
+        print (num, "is not an armstrong no")
+armstrong(1634)
+           
+
+===============power of number===================
+
+def power(x, n):
+    num = x
+    if n == 0:
+        return 1
+    elif n==1:
+        return x
+    else:
+        for i in range(1, n):
+            x = x * num
+        return x
+
+================no of digits in a number==========
+
+def no_of_digits(num):
+    i=0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        temp //= 10
+        i = i+1
+    return i
+
+==================armstrong no in an array===========
+
+def armstrong1(num):
+    sum=0
+    temp = num
+    n = no_of_digits(num)
+    while temp > 0:
+        digit = temp % 10
+        sum += power(digit, n)
+        temp //= 10
+    if num == sum: 
+        return True
+    else:
+        return False
+==================filter==============================
+def filter(pred, lst):
+    filt = []
+    for i in lst:
+        if pred(i): 
+            filt.append(i)
+    return filt
+
+================perfect nos============================
+
+def perfect_numbers(start,stop):
+    for n in range(start,stop):
+        sum=0
+        for i in range(1,n):
+            if n%i == 0:
+                sum = sum+i
+        if sum == n:
+            print(n)
+
+=============prime nos=====================================
+
+def prime_numbers(start,stop):
+    for n in range(start,stop):
+        k = 0
+        for i in range(2,n):
+            if n%i == 0:
+                k = k + 1
+        if k<=0:
+            print(n)
+
+
+
+
